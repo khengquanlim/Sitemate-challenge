@@ -7,8 +7,7 @@ Welcome to the Sitemate Challenge! This project contains two separate applicatio
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Running the Applications](#running-the-applications)
-- [Contributing](#contributing)
-- [License](#license)
+- [Improvements](#improvement)
 
 ## Prerequisites
 
@@ -53,3 +52,10 @@ Start the Server
 ```npm start```
 
 The server should now be running at http://localhost:3000
+
+## Improvements
+
+1. Improving error validations - For security concerns as well as aesthetics, utility of error message prompts and required prompts from React Hook Forms can be further improved.
+2. Better modularization for frontend application - Currently, component is only separated via services and components. For better maintainability and code cleanliness, each component should have its own directory e.g. CreateItem folder with CreateItem.jsx and CreateItem.css. _Pages_ folder can also be introduced to effectively call from the components to improve better segregation of concerns where pages are able to run independently.
+3. Improving security - Authentication and authorization can be implemented on the backend to protect the server while inputs can be sanitized with the addition of security headers should be utilized to improve frontend security.
+4. Frontend Improvements - There is much work to further improve the users' experience such as being able to search for the items, view more details of each items, table formatting to compartmentalize each items, mobile friendliness optimization
