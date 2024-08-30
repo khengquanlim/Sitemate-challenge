@@ -16,7 +16,7 @@ const DeleteItem = () => {
     };
 
     return (
-        <div>
+        <div className="crud-container">
             <h2>Delete Item</h2>
             <form onSubmit={handleDelete}>
                 <input

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { getItems } from '../services/apiService.jsx';
 
 const ReadItems = () => {
@@ -14,12 +15,12 @@ const ReadItems = () => {
             const data = await getItems();
             setItems(data);
         } catch (error) {
-            setMessage('Error fetching items');
+            setMessage('You have to create any items! Please proceed to ');
         }
     };
 
     return (
-        <div>
+        <div className="crud-container">
             <h2>Items</h2>
             <ul>
                 {items.map(item => (
@@ -28,7 +29,11 @@ const ReadItems = () => {
                     </li>
                 ))}
             </ul>
-            {message && <p>{message}</p>}
+            {message && (
+                <div>
+                    {message} <Link to="/create">Create Item</Link>.
+                </div>
+            )}
         </div>
     );
 };

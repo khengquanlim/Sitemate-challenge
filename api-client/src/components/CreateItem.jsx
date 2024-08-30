@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { createItem } from '../services/apiService';
+import './GeneralCss.css';
 
 const CreateItem = () => {
     const [item, setItem] = useState({ name: '', description: '' });
@@ -17,7 +18,7 @@ const CreateItem = () => {
     };
 
     return (
-        <div>
+        <div className="crud-container">
             <h2>Create Item</h2>
             <form onSubmit={handleSubmit}>
                 <input
@@ -33,8 +34,9 @@ const CreateItem = () => {
                     value={item.description}
                     onChange={(e) => setItem({ ...item, description: e.target.value })}
                     required
+                    className="input-spacing"
                 />
-                <button type="submit">Create</button>
+                <button type="submit" className="input-spacing">Create</button>
             </form>
             {message && <p>{message}</p>}
         </div>

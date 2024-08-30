@@ -26,7 +26,7 @@ const UpdateItem = () => {
     };
 
     return (
-        <div>
+        <div className="crud-container">
             <h2>Update Item</h2>
             <input
                 type="text"
@@ -52,8 +52,9 @@ const UpdateItem = () => {
                     value={item.description}
                     onChange={(e) => setItem({ ...item, description: e.target.value })}
                     required
+                    className="input-spacing"
                 />
-                <button type="submit">Update</button>
+                <button type="submit" className="input-spacing">Update</button>
             </form>
             {message && <p>{message}</p>}
         </div>
