@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { createItem } from '../services/ApiService.jsx';
+import { createItem } from '../services/apiService';
 
 const CreateItem = () => {
     const [item, setItem] = useState({ name: '', description: '' });

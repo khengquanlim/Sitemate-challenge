@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getItems } from '../services/ApiService.jsx';
+import { getItems } from '../services/apiService.jsx';
 
 const ReadItems = () => {
     const [items, setItems] = useState([]);

@@ -1,53 +1,36 @@
-import axios from 'axios';
-
-const API_URL = 'http://localhost:3000/items';
+const API_URL = 'http://localhost:5001/api';
 
 export const createItem = async (item) => {
-    try {
-        const response = await axios.post(`${API_URL}/create`, item);
-        return response.data;
-    } catch (error) {
-        console.error('Error creating item:', error);
-        throw error;
-    }
+    const response = await fetch(`${API_URL}/create`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(item),
+    });
+    return response.json();
 };
 
 export const getItems = async () => {
-    try {
-        const response = await axios.get(API_URL);
-        return response.data;
-    } catch (error) {
-        console.error('Error fetching items:', error);
-        throw error;
-    }
+    const response = await fetch(`${API_URL}/read`);
+    return response.json();
 };
 
 export const getItemById = async (id) => {
-    try {
-        const response = await axios.get(`${API_URL}/${id}`);
-        return response.data;
-    } catch (error) {
-        console.error('Error fetching item:', error);
-        throw error;
-    }
+    const response = await fetch(`${API_URL}/read/${id}`);
+    return response.json();
 };
 
 export const updateItem = async (id, item) => {
-    try {
-        const response = await axios.put(`${API_URL}/${id}`, item);
-        return response.data;
-    } catch (error) {
-        console.error('Error updating item:', error);
-        throw error;
-    }
+    const response = await fetch(`${API_URL}/update/${id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(item),
+    });
+    return response.json();
 };
 
 export const deleteItem = async (id) => {
-    try {
-        const response = await axios.delete(`${API_URL}/${id}`);
-        return response.data;
-    } catch (error) {
-        console.error('Error deleting item:', error);
-        throw error;
-    }
+    const response = await fetch(`${API_URL}/delete/${id}`, {
+        method: 'DELETE',
+    });
+    return response.json();
 };
