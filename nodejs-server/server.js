@@ -1,17 +1,12 @@
 const express = require('express');
-const bodyParser = require('body-parser');
-
+const cors = require('cors');
 const app = express();
-const port = 3000;
-
-const items = [];
-let currentId = 1;
-
-app.use(bodyParser.json());
-
+const port = 5001;
 const itemRoutes = require('./routes/itemRoutes');
 
-app.use('/items', itemRoutes(items, currentId));
+app.use(cors());
+app.use(express.json());
+app.use('/api', itemRoutes);
 
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);

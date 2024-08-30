@@ -1,35 +1,21 @@
-class ItemModel {
-    constructor() {
-        this.items = [];
-        this.currentId = 1;
-    }
+let items = [];
+let nextId = 1;
 
-    create(itemData) {
-        const newItem = { id: this.currentId++, ...itemData };
-        this.items.push(newItem);
-        return newItem;
-    }
+const getItems = () => items;
+const addItem = (item) => {
+    const newItem = { id: nextId++, ...item };
+    items.push(newItem);
+    return newItem;
+};
+const updateItem = (id, item) => {
+    items = items.map(existingItem => 
+        existingItem.id === id ? { id, ...item } : existingItem
+    );
+    return items.find(existingItem => existingItem.id === id);
+};
+const deleteItem = (id) => {
+    items = items.filter(item => item.id !== id);
+    return id;
+};
 
-    read() {
-        return this.items;
-    }
-
-    readById(id) {
-        return this.items.find(item => item.id === id);
-    }
-
-    update(id, itemData) {
-        const index = this.items.findIndex(item => item.id === id);
-        if (index === -1) return null;
-        this.items[index] = { id, ...itemData };
-        return this.items[index];
-    }
-
-    delete(id) {
-        const index = this.items.findIndex(item => item.id === id);
-        if (index === -1) return null;
-        return this.items.splice(index, 1)[0];
-    }
-}
-
-module.exports = ItemModel;
+module.exports = { getItems, addItem, updateItem, deleteItem };
