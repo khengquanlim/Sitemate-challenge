@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { getItems } from '../services/apiService.jsx';
+import { getItems } from '../services/ApiService.jsx';
 
 const ReadItems = () => {
     const [items, setItems] = useState([]);

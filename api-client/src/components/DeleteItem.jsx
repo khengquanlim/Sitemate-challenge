@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { deleteItem } from '../services/apiService.jsx';
+import { deleteItem } from '../services/ApiService.jsx';
 
 const DeleteItem = () => {
     const [id, setId] = useState('');
