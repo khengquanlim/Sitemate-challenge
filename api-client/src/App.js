@@ -4,30 +4,21 @@ import CreateItem from './components/CreateItem';
 import ReadItems from './components/ReadItems';
 import UpdateItem from './components/UpdateItem';
 import DeleteItem from './components/DeleteItem';
+import Header from './components/Header/Header';
 
 function App() {
     return (
-        <Router>
-            <div className="App">
-                <nav>
-                    <ul>
-                        <li><Link to="/">Home</Link></li>
-                        <li><Link to="/create">Create Item</Link></li>
-                        <li><Link to="/read">Read Items</Link></li>
-                        <li><Link to="/update">Update Item</Link></li>
-                        <li><Link to="/delete">Delete Item</Link></li>
-                    </ul>
-                </nav>
-
-                <Routes>
-                    <Route path="/" element={<h1>Welcome to the CRUD App</h1>} />
-                    <Route path="/create" element={<CreateItem />} />
-                    <Route path="/read" element={<ReadItems />} />
-                    <Route path="/update" element={<UpdateItem />} />
-                    <Route path="/delete" element={<DeleteItem />} />
-                </Routes>
-            </div>
-        </Router>
+      <Router>
+        <Header />
+        <div className="App">
+          <Routes>
+            <Route path="/create" element={<CreateItem />} />
+            <Route path="/read" element={<ReadItems />} />
+            <Route path="/update" element={<UpdateItem />} />
+            <Route path="/delete" element={<DeleteItem />} />
+          </Routes>
+        </div>
+      </Router>
     );
 }
 

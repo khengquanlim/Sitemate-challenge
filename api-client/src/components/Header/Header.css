@@ -1,0 +1,34 @@
+.header {
+    position: sticky;
+    z-index: 1000;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #191919;
+    margin-bottom: 2%;
+    background-color: gray; 
+    color: #fff;
+    width: 100%;
+  }
+  
+  .header h1 {
+    margin: 0;
+    margin-left: 2%;
+    font-size: 1.5rem;
+  }
+
+  .icon-spacing {
+    align-items: center;
+    margin-left: 1vw;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .icon-spacing:hover {
+    color: #ccc;
+  }
+  
+  .icon {
+    margin-right: 0.25vw;
+  }
